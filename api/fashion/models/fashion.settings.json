@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fashions",
+  "info": {
+    "name": "fashion"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "items": {
+      "via": "fashion",
+      "collection": "item"
+    }
+  }
+}
